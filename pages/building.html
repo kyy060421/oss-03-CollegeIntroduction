@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>건물 안내 - 첨단융합대학 소개</title>
+  <!-- pages 폴더 안이므로 ../ 필수 -->
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <!-- 1. 머리말: 사이트 제목 (index.html과 동일) -->
+  <header>
+    <h1>첨단융합대학 소개</h1>
+  </header>
+
+  <!-- 2. 내비게이션: pages 폴더 기준 상대 경로로 수정 -->
+  <nav>
+    <ul>
+      <li><a href="../index.html">홈</a></li>
+      <li><a href="department.html">학부 소개</a></li>
+      <!-- 팀장님이 index.html 19번 줄 오타 수정 시 파일명 맞춰서 변경 -->
+      <li><a href="departmental-events.html">단과대 행사</a></li>
+      <li><a href="building.html">건물 안내</a></li>
+    </ul>
+  </nav>
+
+  <!-- 3. 본문: 건물 소개 목록 -->
+  <main>
+    <section>
+      <h2>캠퍼스 주요 건물 안내</h2>
+      <p>한양대학교 ERICA 첨단융합대학 학생들이 자주 이용하는 주요 건물 4곳을 소개합니다.</p>
+    </section>
+
+    <section class="cards">
+      <article class="card">
+        <!-- TODO: 사진 촬영 후 <img src="../images/welfare.jpg" alt="한양대 ERICA 학생복지관 외관"> 추가 -->
+        <h3>학생복지관</h3>
+        <p>호수공원과 연결된 학생 편의 공간</p>
+        <a href="welfare-info.html">자세히 보기</a>
+      </article>
+
+      <article class="card">
+        <!-- TODO: 사진 촬영 후 <img src="../images/sci-tech-1.jpg" alt="한양대 ERICA 제1과학기술관 외관"> 추가 -->
+        <h3>제1과학기술관</h3>
+        <p>강의실과 연구실, 북카페가 위치한 건물</p>
+        <a href="sci-tech-1.html">자세히 보기</a>
+      </article>
+
+      <article class="card">
+        <!-- TODO: 사진 촬영 후 <img src="../images/sci-tech-2.jpg" alt="한양대 ERICA 제2과학기술관 외관"> 추가 -->
+        <h3>제2과학기술관</h3>
+        <p>전공 강의실 및 실험실, 오픈스페이스가 있는 건물</p>
+        <a href="sci-tech-2.html">자세히 보기</a>
+      </article>
+
+      <article class="card">
+        <!-- TODO: 사진 촬영 후 <img src="../images/library.jpg" alt="한양대 ERICA 학술정보관 외관"> 추가 -->
+        <h3>학술정보관</h3>
+        <p>도서 대출 자료실과 열람실, 그룹스터디룸을 갖춘 학습 공간</p>
+        <a href="library-info.html">자세히 보기</a>
+      </article>
+    </section>
+  </main>
+
+  <!-- 4. 팀 정보 (index.html과 동일 + 출처 표기 자리) -->
+  <footer>
+    <p>03조 첨단융합대학 소개 프로젝트</p>
+    <p class="credit">이미지 출처: 직접 촬영 예정</p>
+  </footer>
+</body>
+</html>

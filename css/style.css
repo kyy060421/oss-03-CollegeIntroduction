@@ -13,53 +13,61 @@ body {
   color: #3F3D42;
   background-color: #F4F5F7;
   letter-spacing: -0.02em;
+  overflow-x: hidden;
+}
+
+/* 모든 일반 이미지(<img>) 반응형 필수 규칙 */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 header {
   position: relative;
   background: linear-gradient(135deg, #1D2475 0%, #0E4A84 65%, #1B5E9E 100%);
   color: #FFFFFF;
-  padding: 132px 20px 26px;
+  padding: clamp(104px, 18vw, 132px) 16px 26px;
   text-align: center;
   border-bottom: 4px solid #898C8E;
   box-shadow: 0 4px 20px rgba(29, 36, 117, 0.22);
 }
 
-/* cm-a-01.png용 원형 화이트 엠블럼 배경 */
+/* 화면 너비에 맞춰 자유자재로 크기·위치가 조절되는 원형 사자 엠블럼 */
 header::before {
   content: "";
   position: absolute;
-  top: 24px;
-  left: calc(50% - 165px);
-  width: 84px;
-  height: 84px;
+  top: 22px;
+  left: max(16px, calc(50% - 165px));
+  width: clamp(62px, 15vw, 84px);
+  height: clamp(62px, 15vw, 84px);
   background-color: #FFFFFF;
   background-image: url('../images/cm-a-01.png');
   background-repeat: no-repeat;
-  background-size: 66px 66px;
+  background-size: 76% 76%;
   background-position: center;
   border-radius: 50%;
   border: 3px solid #898C8E;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
 }
 
-/* 우측 슬로건 자동 배치 */
+/* 화면 너비에 맞춰 자동 축소되는 우측 슬로건 */
 header::after {
   content: "";
   position: absolute;
-  top: 24px;
-  left: calc(50% - 65px);
-  width: 230px;
-  height: 84px;
+  top: 22px;
+  left: max(90px, calc(50% - 65px));
+  width: min(230px, calc(100vw - 108px));
+  height: clamp(62px, 15vw, 84px);
   background-image: url('../images/hyu_slogan_white.png');
   background-repeat: no-repeat;
-  background-size: 220px auto;
+  background-size: contain;
   background-position: left center;
   filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.35));
 }
 
 header h1 {
-  font-size: 2.15rem;
+  font-size: clamp(1.45rem, 4vw, 2.15rem);
   font-weight: 800;
   margin-bottom: 8px;
   letter-spacing: -0.03em;
@@ -67,7 +75,7 @@ header h1 {
 }
 
 header p {
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
   color: #E2E8F0;
   max-width: 680px;
   margin: 0 auto 22px;
@@ -122,4 +130,263 @@ main {
 section {
   background-color: #FFFFFF;
   padding: 30px;
-  margin-bottom: 24px
+  margin-bottom: 24px;
+  border: 1px solid #E2E8F0;
+  border-top: 4px solid #0E4A84;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(63, 61, 66, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+section:hover {
+  box-shadow: 0 8px 24px rgba(14, 74, 132, 0.1);
+}
+
+section h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #0E4A84;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #F1F5F9;
+}
+
+section h2::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 22px;
+  background: linear-gradient(to bottom, #0E4A84, #898C8E);
+  border-radius: 3px;
+}
+
+section ul {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+section ul li {
+  padding: 14px 18px;
+  background-color: #F8FAFC;
+  border-radius: 10px;
+  border: 1px solid #E2E8F0;
+  border-left: 4px solid #898C8E;
+  transition: all 0.2s ease;
+}
+
+section ul li:hover {
+  background-color: #F0F5FA;
+  border-left-color: #0E4A84;
+  transform: translateX(3px);
+}
+
+section ul li a {
+  color: #0E4A84;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+section ul li a::after {
+  content: "→";
+  font-size: 0.95rem;
+  color: #6CCA98;
+  transition: transform 0.2s ease;
+}
+
+section ul li a:hover {
+  color: #1D2475;
+}
+
+section ul li a:hover::after {
+  transform: translateX(4px);
+}
+
+section ul li p {
+  margin-top: 6px;
+  font-size: 0.94rem;
+  color: #3F3D42;
+}
+
+main > p {
+  text-align: right;
+  margin: 20px 0;
+}
+
+main > p a {
+  display: inline-block;
+  background-color: #0E4A84;
+  color: #FFFFFF;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(14, 74, 132, 0.22);
+  transition: all 0.2s ease;
+}
+
+main > p a:hover {
+  background-color: #1D2475;
+  transform: translateY(-2px);
+}
+
+details {
+  background-color: #F8FAFC;
+  border: 1px solid #CBD5E1;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+
+details[open] {
+  background-color: #FFFFFF;
+  border-color: #0E4A84;
+  box-shadow: 0 4px 12px rgba(14, 74, 132, 0.07);
+}
+
+summary {
+  cursor: pointer;
+  color: #0E4A84;
+  font-size: 1.08rem;
+  font-weight: 700;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+summary::after {
+  content: "+";
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  background-color: #898C8E;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+details[open] summary::after {
+  content: "−";
+  background-color: #0E4A84;
+}
+
+details[open] summary {
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.cards article {
+  flex: 1 1 260px;
+  background-color: #FFFFFF;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #E2E8F0;
+  border-bottom: 3px solid #6CCA98;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+.cards article:nth-child(2n) {
+  border-bottom-color: #FF8672;
+}
+
+.cards article:hover {
+  transform: translateY(-4px);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 14px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+caption {
+  font-weight: 700;
+  color: #0E4A84;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+th, td {
+  border-bottom: 1px solid #E2E8F0;
+  padding: 12px 16px;
+  text-align: left;
+}
+
+th {
+  background-color: #0E4A84;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+tr:nth-child(even) td {
+  background-color: #F8FAFC;
+}
+
+footer {
+  background-color: #3F3D42;
+  color: #E2E8F0;
+  text-align: center;
+  padding: 28px 16px;
+  margin-top: 56px;
+  border-top: 4px solid #898C8E;
+  font-size: 0.9rem;
+}
+
+.credit {
+  font-size: 0.8rem;
+  color: #CBD5E1;
+  margin-top: 6px;
+}
+
+/* 태블릿·핸드폰 화면(768px 이하) 반응형 규칙 */
+@media (max-width: 768px) {
+  nav {
+    top: 0;
+    border-radius: 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  nav a {
+    width: 100%;
+    text-align: center;
+  }
+
+  section {
+    padding: 20px 16px;
+  }
+
+  .cards article {
+    flex-basis: 100%;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+}

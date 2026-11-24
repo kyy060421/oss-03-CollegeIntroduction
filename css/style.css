@@ -386,3 +386,32 @@ footer {
     overflow-x: auto;
   }
 }
+/* 어떤 상황에서도 로고 크기가 화면을 뚫지 못하게 강제 제한 */
+header .hyu-logo-box {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 14px !important;
+  margin-bottom: 14px !important;
+  flex-wrap: wrap !important;
+}
+
+header .hyu-lion-logo {
+  width: clamp(54px, 13vw, 76px) !important;
+  height: clamp(54px, 13vw, 76px) !important;
+  max-width: 76px !important;
+  max-height: 76px !important;
+  object-fit: contain !important;
+  background-color: #FFFFFF !important;
+  padding: 6px !important;
+  border-radius: 50% !important;
+  border: 3px solid #898C8E !important;
+}
+
+header .hyu-slogan-logo {
+  width: auto !important;
+  height: clamp(28px, 7vw, 44px) !important;
+  max-width: 60vw !important;
+  max-height: 44px !important;
+  object-fit: contain !important;
+}

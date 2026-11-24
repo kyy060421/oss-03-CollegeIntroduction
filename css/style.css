@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #3F3D42;
+  background-color: #F4F5F7;
+  letter-spacing: -0.02em;
+}
+
+header {
+  position: relative;
+  background: linear-gradient(135deg, #1D2475 0%, #0E4A84 65%, #1B5E9E 100%);
+  color: #FFFFFF;
+  padding: 132px 20px 26px;
+  text-align: center;
+  border-bottom: 4px solid #898C8E;
+  box-shadow: 0 4px 20px rgba(29, 36, 117, 0.22);
+}
+
+/* cm-a-01.png용 원형 화이트 엠블럼 배경 */
+header::before {
+  content: "";
+  position: absolute;
+  top: 24px;
+  left: calc(50% - 165px);
+  width: 84px;
+  height: 84px;
+  background-color: #FFFFFF;
+  background-image: url('../images/cm-a-01.png');
+  background-repeat: no-repeat;
+  background-size: 66px 66px;
+  background-position: center;
+  border-radius: 50%;
+  border: 3px solid #898C8E;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
+}
+
+/* 우측 슬로건 자동 배치 */
+header::after {
+  content: "";
+  position: absolute;
+  top: 24px;
+  left: calc(50% - 65px);
+  width: 230px;
+  height: 84px;
+  background-image: url('../images/hyu_slogan_white.png');
+  background-repeat: no-repeat;
+  background-size: 220px auto;
+  background-position: left center;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.35));
+}
+
+header h1 {
+  font-size: 2.15rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  letter-spacing: -0.03em;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+header p {
+  font-size: 1rem;
+  color: #E2E8F0;
+  max-width: 680px;
+  margin: 0 auto 22px;
+}
+
+nav {
+  position: sticky;
+  top: 10px;
+  z-index: 100;
+  background-color: rgba(29, 36, 117, 0.94);
+  backdrop-filter: blur(8px);
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(137, 140, 142, 0.4);
+  max-width: 1000px;
+  margin: 0 auto;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+}
+
+nav a {
+  display: inline-block;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+nav a:hover {
+  background-color: #FFFFFF;
+  color: #0E4A84;
+  transform: translateY(-1px);
+}
+
+main {
+  max-width: 1000px;
+  margin: 36px auto;
+  padding: 0 20px;
+}
+
+section {
+  background-color: #FFFFFF;
+  padding: 30px;
+  margin-bottom: 24px
